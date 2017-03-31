@@ -86,10 +86,10 @@ else if (operand === "do-what-it-says") {
   //read files from random.text
   var fs = require("fs");
   fs.readFile("random.txt", "utf8", function(error, data) {
-  console.log(data);
-  console.log("==========================");
+  // console.log(data);
+  // console.log("==========================");
   var dataArr = data.split(",");
-  console.log(dataArr[0]);
+  // console.log(dataArr[0]);
   operand = dataArr[0];
   //call execute to make it doing what it says
   execute();
