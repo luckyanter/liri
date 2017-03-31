@@ -29,7 +29,7 @@ function execute(){
     }else{
       for (var i = 3; i < process.argv.length; i++) {
         song = "" + " " + process.argv[i];
-        console.log(song);
+        // console.log(song);
       }
     }
 
@@ -55,7 +55,7 @@ function execute(){
     }else{
       for (var i = 3; i < process.argv.length; i++) {
         movieName = "" + " " + process.argv[i];
-        console.log(movieName);
+        // console.log(movieName);
       }
     }
 
