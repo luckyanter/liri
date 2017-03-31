@@ -1,11 +1,13 @@
 
 var operand = process.argv[2];
-
+//creat a function that will run what is in process.argv[2]
 function execute(){
+
   if (operand === "my-tweets") {
+     //grap the api acees keys from keys.js 
     var twitterList = require("./keys.js");
     var twitterKeysGrap = twitterList.twitterKeys;
-
+    // use the twitter npm package
     var Twitter = require('twitter');
     var client = new Twitter(twitterKeysGrap);
     var params = {screen_name: 'anteran02755085'};
@@ -21,7 +23,7 @@ function execute(){
   }
 
   else if (operand === "spotify-this-song") {
-
+    // use the spotify npm package
     var spotify = require('spotify');
     var song;
     if (process.argv.length <= 3){
@@ -48,6 +50,7 @@ function execute(){
 
 
   else if (operand === "movie-this") {
+    // use the request npm package
     var request = require("request");
     var movieName;
     if (process.argv.length <= 3){
@@ -80,6 +83,7 @@ function execute(){
 
 
 else if (operand === "do-what-it-says") {
+  //read files from random.text
   var fs = require("fs");
   fs.readFile("random.txt", "utf8", function(error, data) {
   console.log(data);
@@ -87,6 +91,7 @@ else if (operand === "do-what-it-says") {
   var dataArr = data.split(",");
   console.log(dataArr[0]);
   operand = dataArr[0];
+  //call execute to make it doing what it says
   execute();
 });
 }
@@ -94,4 +99,5 @@ else {
   console.log("Not a recognized command");
 }
 }
+//call excute to start the app
 execute();
